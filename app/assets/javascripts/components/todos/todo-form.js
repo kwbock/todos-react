@@ -1,5 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
+var AppActions = require('../../actions/app-actions');
 
 var TodoForm = React.createClass({
   getInitialState: function() {
@@ -7,7 +8,8 @@ var TodoForm = React.createClass({
   },
 
   handleClick: function(event) {
-    console.log('clicked', this.state.value);
+    console.log('click');
+    AppActions.addTodo({description: this.state.value});
   },
 
   _onChange: function(event) {

@@ -1,5 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
+var AppActions = require('../../actions/app-actions');
 var TodoListItem = require('./todo-list-item');
 var TodoStore = require('../../stores/todo-store');
 
@@ -10,16 +11,17 @@ var TodoList = React.createClass({
 
   componentWillMount: function() {
     TodoStore.addChangeListener(this._onChange);
+    AppActions.getTodos();
   },
 
   _onChange: function() {
-    this.setState(TodoStore.getTodos());
+    this.setState({todos: TodoStore.getTodos()});
   },
 
   render: function() {
     var todos = this.state.todos.map(function(todo, i) {
       return (
-        <TodoListItem todo={todo} />
+        <TodoListItem todo={todo}/>
       );
     });
 

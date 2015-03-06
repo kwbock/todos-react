@@ -1,3 +1,4 @@
+var AppActions = require('../actions/app-actions');
 var AppDispatcher = require('../dispatchers/app-dispatcher');
 var AppConstants = require('../constants/app-constants');
 var assign = require('object-assign')
@@ -8,7 +9,7 @@ var CHANGE_EVENT = 'change';
 var _todos = [];
 
 function _addTodo(todo) {
-  _todos.push({description: todo});
+  _todos.push(todo);
 }
 
 function _removeTodo(index) {
@@ -41,7 +42,10 @@ var TodoStore = assign(EventEmitter.prototype, {
         console.log(_todos);
         break;
       case AppConstants.REMOVE_TODO:
-        _removeTodo(payload.action.id);
+        AppActions.getTodos();
+        break;
+      case AppConstants.GET_TODOS:
+        _todos = payload.action.todos;
         break;
     }
 

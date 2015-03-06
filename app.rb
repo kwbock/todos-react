@@ -2,6 +2,7 @@ $LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__))
 
 require 'boot'
 require 'app/extensions'
+require 'app/routes'
 
 class App < Sinatra::Application
   configure do
@@ -11,6 +12,8 @@ class App < Sinatra::Application
   end
 
   register Extensions::ApplicationHelper
+
+  register Routes::TodoRoutes
 
   get "/" do
     # binding.pry

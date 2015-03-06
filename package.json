@@ -1,0 +1,19 @@
+{
+  "name": "sinatra-template",
+  "version": "0.0.0",
+  "description": "A base application template for Sinatra apps",
+  "author": "Kyle Bock",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kwbock/sinatra-template.git"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "keymirror": "^0.1.1",
+    "react": "^0.12.2",
+    "reactify": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  }
+}

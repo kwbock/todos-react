@@ -1,0 +1,6 @@
+.sass-cache
+
+config/*.yml
+public/assets
+node_modules
+dist
